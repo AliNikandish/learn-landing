@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { ContactUsbg } from "../assets";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -94,7 +95,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
-          <img src="contactusillu3.svg" className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="تصویر تماس با ما"/>
+          <img src={ContactUsbg} className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="تصویر تماس با ما"/>
       </motion.div>
     </div>
   );

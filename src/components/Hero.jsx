@@ -1,3 +1,4 @@
+import { Herobg } from "../assets";
 
 const Hero = () => {
   return (
@@ -48,7 +49,7 @@ const Hero = () => {
 
           <div className="order-1 lg:order-2">
             <img
-              src="boy-light.svg"
+              src={Herobg}
               className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]"
               alt="تصویر بخش هدر"
             />

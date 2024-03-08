@@ -11,6 +11,9 @@ import JsLib from "./JsLib.webp";
 import WebSocket from "./WebSocket.webp";
 import TelPhp from "./TelPhp.webp";
 
+import ContactUsbg from './contactusillu3.svg'
+import Herobg from './boy-light.svg'
+
 export {
   logo,
   menu,
@@ -23,4 +26,6 @@ export {
   JsLib,
   GraphQL,
   TelPhp,
+  ContactUsbg,
+  Herobg,
 };
