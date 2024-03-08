@@ -1,0 +1,19 @@
+@font-face {
+    font-family: VazirLight;
+    src: url("./assets/Fonts/Vazirmatn-Light.woff2") format("truetype");
+  }
+
+@font-face {
+    font-family: VazirMedium;
+    src: url("./assets/Fonts/Vazirmatn-Medium.woff2") format("truetype");
+  }
+
+  @font-face {
+    font-family: VazirBold;
+    src: url("./assets/Fonts/Vazirmatn-Bold.woff2") format("truetype");
+  }
+
+
+  p,span,h2,h1,h3,div,ul,section,nav,li,a,input,::placeholder,label,button{
+    font-family: "vazirMedium";
+  }
