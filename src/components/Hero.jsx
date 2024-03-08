@@ -50,7 +50,7 @@ const Hero = () => {
             <img
               src="boy-light.svg"
               className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]"
-              alt="سبز لرن"
+              alt="تصویر بخش هدر"
             />
           </div>
         </div>

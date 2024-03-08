@@ -22,13 +22,13 @@ const PreSalesCard = ({
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
-          max: 45,
+          max: 20,
           scale: 1,
-          speed: 450,
+          speed: 100,
         }}
-        className="bg-green-500 rounded-2xl sm:w-[260px] w-full"
+        className="bg-green-500 rounded-2xl sm:w-[265px] w-full"
       >
-        <div className="course flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
+        <div className="flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
           <div className="relative h-42">
             <a
               className="w-full h-full block"
@@ -52,7 +52,7 @@ const PreSalesCard = ({
               {category}{" "}
             </a>
 
-            <h4 className="max-h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+            <h4 className="line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
               <a href="https://sabzlearn.ir/course/telegram-bot-php/">
                 {title}
               </a>
@@ -177,7 +177,7 @@ const PreSales = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {PreSaleList.map((project, index) => (
           <PreSalesCard key={`project-${index}`} index={index} {...project} />
         ))}

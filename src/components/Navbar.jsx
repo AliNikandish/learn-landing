@@ -1,32 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo} from "../assets";
+import { logo } from "../assets";
 
-const Navbar = () => {
+const Navbar = ({ toggle, setToggle }) => {
   const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = window.scrollY;
+  //     if (scrollTop > 100) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+  const myref = useRef(null);
+
+  const handleOutSideClick = (event) => {
+    if (!myref.current?.contains(event.target)) {
+      setToggle(false);
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+    document.body.addEventListener("click", handleOutSideClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleOutSideClick);
     };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [myref]);
 
   return (
     <nav
+      ref={myref}
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${"bg-white"}`}
@@ -58,7 +75,6 @@ const Navbar = () => {
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -76,9 +92,13 @@ const Navbar = () => {
           </svg>
 
           <div
+            className={`w-full h-[2000px] bg-black/30 absolute top-20 left-0 ${!toggle ? "hidden" : "block"} `}
+            onClick={() => setToggle(false)}
+          ></div>
+          <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 bg-slate-100 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-2xl border border-slate-300`}
+            } p-6 bg-slate-100 absolute top-20 left-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-2xl border border-slate-300`}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
               {navLinks.map((nav) => (

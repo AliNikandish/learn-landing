@@ -17,7 +17,7 @@ const OffersCard = ({ Offer }) => {
     <VerticalTimelineElement
       contentStyle={{
         background: "#1d1836",
-        color: "#000",
+        color: "green",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={Offer.date}
@@ -42,7 +42,7 @@ const OffersCard = ({ Offer }) => {
         </p>
       </div>
 
-      <ul dir="rtl" className='mt-5 list-disc ml-5 space-y-2'>
+      <ul dir="rtl" className='mt-5 list-disc ml-5 space-y-2 p-2'>
         {Offer.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
