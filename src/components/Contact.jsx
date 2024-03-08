@@ -94,7 +94,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
-          <img src="/src/assets/contactusillu3.svg" className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="سبز لرن"/>
+          <img src="contactusillu3.svg" className="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="سبز لرن"/>
       </motion.div>
     </div>
   );
